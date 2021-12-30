@@ -15,6 +15,20 @@
   
   第七步：对过滤器组的输出求log，得到fbank
   
-  # 这一步的计算结果就是fbank
+  ==这一步的计算结果就是fbank==
   
   第七步：对fbank计算余弦反变换DCT，得到MFCC，取1:13维，加上每帧能量，共13维，作为每帧的倒谱系数。
+
+# compact in English
+  
+  1. Frame the signal into short frames.
+  
+  2. For each frame calculate the periodogram estimate of the power spectrum.
+  
+  3. Apply the mel filterbank to the power spectra, sum the energy in each filter.
+  
+  4. Take the logarithm of all filterbank energies.
+  
+  5. Take the DCT of the log filterbank energies.
+  
+  6. Keep DCT coefficients 2-13, discard the rest.
